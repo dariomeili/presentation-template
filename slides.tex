@@ -1,0 +1,143 @@
+
+
+
+%\documentclass[aspectratio=43]{beamer}
+\documentclass[aspectratio=169]{beamer}
+
+% Title --------------------------------------------
+\title{Title of the Presentation Goes Here}
+\subtitle{Subtitle of the Presentation Here}
+\date{March 9, 2023}
+\author{Dario Meili}
+
+\input{preamble.tex}
+
+% These slides also contain speaker notes. You can print just the slides,
+% just the notes, or both, depending on the setting below. Comment out the want
+% you want.
+
+\setbeameroption{hide notes} % Only slides
+%\setbeameroption{show only notes} % Only notes
+%\setbeameroption{show notes on second screen=right} % Both
+
+% To give a presentation with the Skim reader (http://skim-app.sourceforge.net) on OSX so
+% that you see the notes on your laptop and the slides on the projector, do the following:
+% 
+% 1. Generate just the presentation (hide notes) and save to slides.pdf
+% 2. Generate onlt the notes (show only nodes) and save to notes.pdf
+% 3. With Skim open both slides.pdf and notes.pdf
+% 4. Click on slides.pdf to bring it to front.
+% 5. In Skim, under "View -> Presentation Option -> Synhcronized Noted Document"
+%    select notes.pdf.
+% 6. Now as you move around in slides.pdf the notes.pdf file will follow you.
+% 7. Arrange windows so that notes.pdf is in full screen mode on your laptop
+%    and slides.pdf is in presentation mode on the projector.
+
+% Give a slight yellow tint to the notes page
+\setbeamertemplate{note page}{\pagecolor{yellow!5}\insertnote}\usepackage{palatino}
+
+% Set-up Bibliography ------------------------------
+\addbibresource{references.bib}
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+\begin{frame}
+\maketitle
+
+ \vspace{2.5mm}
+ {\footnotesize Development Economics Group ETH Zurich}
+\end{frame}
+% ------------------------------------------------------------------------------
+
+\begin{frame}[label=motivation]{Motivation}
+ \begin{itemize}
+            \item First point with inline citation by 
+\pause
+            \item Second Point with citation \citepcolor{Arnold2018}
+            \item Colors: 
+            \begin{itemize}
+                \item \navy{navy} \purple{purple} \kelly{kelly} \ruby{ruby} \alice{alice} \daisy{daisy} \coral{coral} \cranberry{cranberry} \slate{slate} \jet{jet} \asher{asher}
+            \end{itemize}
+        
+\end{itemize}
+%----------------------------- 
+\note<1>[item]{Note that only appears with the first bullet point.} 
+
+\note<1>[item]{Another note only for the first bullet point}
+
+\note<2>[item]{A note for the second bullet point}
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+\begin{frame}[label=columns]{Columns}
+\begin{columns}[T]
+    \vspace{0pt}
+    \begin{column}{.65\textwidth}
+    
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{kanagawa.jpg}
+    \label{fig:figure1}
+\end{figure}
+\tiny{Note: Something about the picture figure.}
+    \end{column}
+    
+    \begin{column}{.35\textwidth}
+     \vspace{5mm}
+     \begin{itemize}
+         \item Some test explaining the results 
+         \begin{itemize}
+             \item important implications
+         \end{itemize}
+         \item more important stuff
+     \end{itemize}
+    \end{column}
+    \end{columns} 
+        
+
+%----------------------------- 
+\note[item]{Note for the whole slide} 
+
+\end{frame}
+
+% ------------------------------------------------------------------------------
+
+\begin{frame}{Regression Table}{with highlighted results}
+\centering
+\resizebox{0.4\textwidth}{!}{
+
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Variable} & \textbf{Model 1} & \textbf{Model 2} & \textbf{Model 3}\\ 
+\midrule
+frl         &      -0.012   &      -0.052   & \marktopleft{ex1}  -0.156** \\
+            &      (0.04)   &      (0.06)   &      (0.06)   \\
+minority    &               &       0.034   &       0.097*  \\
+            &               &      (0.05)   &      (0.04)   \\
+disting     &               &               &       0.439***\\
+            &               &               &      (0.06)   \\
+cons       &       0.529***&       0.530***&       0.518***\\
+            &      (0.03)   &      (0.03)   &      (0.02)  \markbottomright{ex1} \\
+\midrule
+ N           &     196   &     196   &     196   \\          
+R$^{2}$           &       0.001   &       0.003   &       0.235   \\
+\bottomrule
+\addlinespace[1ex]
+\multicolumn{3}{l}{\textsuperscript{***}$p<0.01$, 
+  \textsuperscript{**}$p<0.05$, 
+  \textsuperscript{*}$p<0.1$}
+\end{tabular}
+}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+\begin{frame}[allowframebreaks]{References}
+   \printbibliography
+\end{frame}
+
+
+
+
+\end{document}
